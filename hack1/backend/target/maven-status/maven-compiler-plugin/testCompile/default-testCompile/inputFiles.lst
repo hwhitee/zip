@@ -1,0 +1,7 @@
+/app/applet/hack1/backend/src/test/java/com/wardsentinel/backend/NurseDispatchServiceTest.java
+/app/applet/hack1/backend/src/test/java/com/wardsentinel/backend/PrivacyLedgerServiceTest.java
+/app/applet/hack1/backend/src/test/java/com/wardsentinel/backend/SafetyEventFsmTest.java
+/app/applet/hack1/backend/src/test/java/com/wardsentinel/backend/SafetyPolicyEngineTest.java
+/app/applet/hack1/backend/src/test/java/com/wardsentinel/backend/ScenarioIntegrationTests.java
+/app/applet/hack1/backend/src/test/java/com/wardsentinel/backend/StructuredExplanationTest.java
+/app/applet/hack1/backend/src/test/java/com/wardsentinel/backend/TelemetryIngestionIntegrationTest.java

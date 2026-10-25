@@ -1,0 +1,49 @@
+# --- Node / Next.js ---
+node_modules/
+.next/
+.cache/
+dist/
+out/
+*.tsbuildinfo
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# --- Java / Maven ---
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/wrapper/maven-wrapper.jar
+
+# --- Secrets / Environment ---
+.env
+.env.local
+.env.production
+*.pem
+*.key
+*.p12
+
+# --- Docker ---
+*.log
+
+# --- IDEs ---
+.idea/
+.vscode/settings.json
+*.iml
+.DS_Store
+Thumbs.db
+
+# --- OS ---
+desktop.ini

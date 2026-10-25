@@ -1,0 +1,25 @@
+# Dependencies & build output
+node_modules
+dist
+.cache
+
+# Java build artifacts & target
+hack1/backend/target
+**/*.class
+**/*.jar
+
+# Python virtualenvs & test cache
+hack1/inference/.venv
+**/.pytest_cache
+**/__pycache__
+**/*.pyc
+
+# Large archive assets
+public/assets/aistudio/*.zip
+*.zip
+*.log
+
+# Git & OS metadata
+.git
+.DS_Store
+Thumbs.db

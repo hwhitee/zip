@@ -1,0 +1,73 @@
+{
+  "result_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "window_id": "03926924-8345-4502-9934-920b8b92f1f1",
+  "patient_id": "19e1ba70-3f47-4c38-981f-c9168cb759c0",
+  "computed_at_ms": 1700000305120,
+  "latency_ms": 18,
+  "risk_score": 0.83237,
+  "risk_level": "CRITICAL",
+  "risk_thresholds": {
+    "low": 0.35,
+    "elevated": 0.6,
+    "high": 0.8
+  },
+  "contributing_factors": [
+    {
+      "feature_name": "mean_heart_rate",
+      "value": 88.0,
+      "weight": 0.18
+    },
+    {
+      "feature_name": "spo2_min",
+      "value": 96.0,
+      "weight": 0.18
+    },
+    {
+      "feature_name": "mean_resp_rate",
+      "value": 18.0,
+      "weight": 0.14
+    },
+    {
+      "feature_name": "mean_skin_temp_c",
+      "value": 34.2,
+      "weight": 0.1
+    },
+    {
+      "feature_name": "motion_mean_g",
+      "value": 0.2,
+      "weight": 0.1
+    },
+    {
+      "feature_name": "torso_elevation_mean_deg",
+      "value": 42.5,
+      "weight": 0.08
+    },
+    {
+      "feature_name": "edge_proximity_max",
+      "value": 0.75,
+      "weight": 0.1
+    },
+    {
+      "feature_name": "lower_body_movement_mean_g",
+      "value": 0.325,
+      "weight": 0.06
+    },
+    {
+      "feature_name": "bed_pressure_shift_mean",
+      "value": 0.275,
+      "weight": 0.04
+    },
+    {
+      "feature_name": "occupancy_confidence_mean",
+      "value": 0.765,
+      "weight": 0.02
+    }
+  ],
+  "uncertainty": 0.0,
+  "missing_modalities": [],
+  "warnings": [],
+  "scenario_hint": "PROGRESSIVE_BED_EXIT",
+  "gemini_explanation": "Pre-fall trajectory detected: progressive edge proximity and active lower-body movement indicate bed-exit with declining occupancy.",
+  "model_version": "v0.1.0-heuristic",
+  "model_type": "HEURISTIC"
+}

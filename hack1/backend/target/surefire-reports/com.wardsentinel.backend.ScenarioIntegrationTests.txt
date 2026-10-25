@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.wardsentinel.backend.ScenarioIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.25 s -- in com.wardsentinel.backend.ScenarioIntegrationTests

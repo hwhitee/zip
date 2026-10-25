@@ -1,0 +1,53 @@
+version: "3.9"
+
+# ─────────────────────────────────────────────────────────────
+#  WardSentinel — Local Infrastructure
+#  Starts: PostgreSQL 16, pgAdmin 4
+#
+#  Usage:
+#    docker compose -f infra/docker-compose.yml up -d
+#    docker compose -f infra/docker-compose.yml down -v   # wipe volumes
+# ─────────────────────────────────────────────────────────────
+
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: wardsentinel-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-wardsentinel}
+      POSTGRES_USER: ${POSTGRES_USER:-wardsentinel}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme_dev_only}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/00_init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-wardsentinel} -d ${POSTGRES_DB:-wardsentinel}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  pgadmin:
+    image: dpage/pgadmin4:8
+    container_name: wardsentinel-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@wardsentinel.local}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+    ports:
+      - "5050:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  postgres_data:
+  pgadmin_data:
